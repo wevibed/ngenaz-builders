@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 42 31% 94%;
+    --foreground: 0 0% 7%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 7%;
+    --popover: 42 31% 94%;
+    --popover-foreground: 0 0% 7%;
+    --primary: 0 0% 7%;
+    --primary-foreground: 42 31% 94%;
+    --secondary: 40 6% 90%;
+    --secondary-foreground: 0 0% 7%;
+    --muted: 40 8% 88%;
+    --muted-foreground: 0 0% 36%;
+    --accent: 30 34% 49%;
+    --accent-foreground: 0 0% 7%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 40 8% 86%;
+    --input: 40 8% 86%;
+    --ring: 30 34% 49%;
+    --radius: 0.25rem;
+    --font-heading: "Inter Tight", ui-sans-serif, system-ui, sans-serif;
+    --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
+    --font-display: "Inter Tight", ui-sans-serif, system-ui, sans-serif;
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body;
+  }
+
+  ::selection {
+    background-color: hsl(var(--accent));
+    color: hsl(var(--accent-foreground));
+  }
+}
+
+@layer components {
+  .eyebrow {
+    @apply text-[0.7rem] uppercase tracking-[0.25em] font-medium;
+  }
+  .display {
+    @apply font-heading font-bold tracking-[-0.03em] leading-[0.95];
+  }
+  .rhythm-line {
+    @apply h-px w-full bg-border;
+  }
+}
