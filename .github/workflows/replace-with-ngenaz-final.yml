@@ -20,83 +20,58 @@ jobs:
         id: find_zip
         shell: bash
         run: |
-          ZIP_FILE=$(find . -maxdepth 1 -type f -iname "*.zip" | head -n 1)
+          ZIP_FILE=$(find . -maxdepth 1 -type f -name "*fixed*.zip" | head -n 1)
 
           if [ -z "$ZIP_FILE" ]; then
-            echo "ERROR: No ZIP file found in repository root."
-            echo "Upload the Ngenaz final ZIP to the repository first."
+            echo "ERROR: Fixed Ngenaz ZIP not found."
             exit 1
           fi
 
-          echo "Using ZIP: $ZIP_FILE"
+          echo "Using: $ZIP_FILE"
           echo "zip_file=$ZIP_FILE" >> "$GITHUB_OUTPUT"
 
-      - name: Extract replacement ZIP
-        shell: bash
+      - name: Extract replacement
         run: |
           rm -rf /tmp/ngenaz-final
           mkdir -p /tmp/ngenaz-final
 
           unzip -q "${{ steps.find_zip.outputs.zip_file }}" -d /tmp/ngenaz-final
 
-          echo "ZIP extracted."
-
-      - name: Locate actual project
+      - name: Locate project
         id: project
         shell: bash
         run: |
-          if [ -f "/tmp/ngenaz-final/package.json" ]; then
-            PROJECT_ROOT="/tmp/ngenaz-final"
-          else
-            PROJECT_ROOT=$(dirname "$(find /tmp/ngenaz-final -name package.json -type f | head -n 1)")
-          fi
+          PROJECT_ROOT=$(dirname "$(find /tmp/ngenaz-final -name package.json -type f | head -n 1)")
 
-          if [ -z "$PROJECT_ROOT" ] || [ ! -f "$PROJECT_ROOT/package.json" ]; then
-            echo "ERROR: Could not find package.json in replacement ZIP."
+          if [ -z "$PROJECT_ROOT" ]; then
+            echo "ERROR: package.json not found."
             exit 1
           fi
 
-          echo "Project root: $PROJECT_ROOT"
+          echo "Project: $PROJECT_ROOT"
           echo "project_root=$PROJECT_ROOT" >> "$GITHUB_OUTPUT"
 
-      - name: Remove old site
-        shell: bash
+      - name: Prepare replacement
         run: |
+          PROJECT_ROOT="${{ steps.project.outputs.project_root }}"
+
           find . -mindepth 1 -maxdepth 1 \
             ! -name ".git" \
             -exec rm -rf {} +
 
-      - name: Copy new Ngenaz site
-        shell: bash
-        run: |
-          PROJECT_ROOT="${{ steps.project.outputs.project_root }}"
-
           cp -a "$PROJECT_ROOT"/. .
 
-          echo "New Ngenaz site copied."
-
-      - name: Remove replacement ZIP
-        shell: bash
-        run: |
-          find . -maxdepth 1 -type f -iname "*.zip" -delete
-
-      - name: Verify project
-        shell: bash
-        run: |
-          test -f package.json
-          test -f index.html
-
-          echo "package.json found."
-          echo "index.html found."
-          echo "Ngenaz replacement verified."
+          rm -f *.zip
 
       - name: Install dependencies
-        run: npm install
+        run: |
+          npm install
+          npm install -D tailwindcss-animate@^1.0.7
 
-      - name: Build site
+      - name: Production build
         run: npm run build
 
-      - name: Commit replacement
+      - name: Commit final site
         shell: bash
         run: |
           git config user.name "github-actions[bot]"
@@ -104,9 +79,7 @@ jobs:
 
           git add -A
 
-          git commit -m "Replace site with finalized Ngenaz Builders build" || {
-            echo "No changes to commit."
-            exit 0
-          }
+          git commit -m "Finalize Ngenaz Builders website" || \
+            echo "No changes to commit"
 
           git push
