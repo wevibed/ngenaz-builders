@@ -4,3 +4,14 @@ export const WHATSAPP_QUOTE_LINK =
   "https://wa.me/263784903760?text=Hi%20Ngenaz%20Builders%2C%20I%27d%20like%20to%20request%20a%20quote%20for%20a%20project.";
 export const WHATSAPP_PROJECT_LINK =
   "https://wa.me/263784903760?text=Hi%20Ngenaz%20Builders%2C%20I%27d%20like%20to%20talk%20about%20a%20project.";
+
+export const WORK_IMAGES = [
+  'WA0107','WA0152','WA0151','WA0136','WA0097','WA0147','WA0128','WA0091',
+  'WA0130','WA0125','WA0133','WA0104','WA0139','WA0120','WA0122','WA0113',
+  'WA0095','WA0105','WA0102','WA0137','WA0118','WA0132','WA0106','WA0096',
+  'WA0148','WA0115','WA0123','WA0127','WA0092','WA0101','WA0094','WA0150',
+  'WA0149','WA0109','WA0111','WA0146','WA0126','WA0100','WA0131','WA0145',
+  'WA0093','WA0124','WA0108','WA0103','WA0114','WA0138','WA0116','WA0119',
+  'WA0098','WA0140','WA0129','WA0110','WA0141','WA0134','WA0144','WA0112',
+  'WA0135','WA0143'
+].map((name) => `/images/work/${name}.webp`);
