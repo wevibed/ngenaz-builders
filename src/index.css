@@ -1,64 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --background: 42 31% 94%;
-    --foreground: 0 0% 7%;
+    --background: 42 20% 96%;
+    --foreground: 210 12% 9%;
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 7%;
-    --popover: 42 31% 94%;
-    --popover-foreground: 0 0% 7%;
-    --primary: 0 0% 7%;
-    --primary-foreground: 42 31% 94%;
-    --secondary: 40 6% 90%;
-    --secondary-foreground: 0 0% 7%;
-    --muted: 40 8% 88%;
-    --muted-foreground: 0 0% 36%;
-    --accent: 30 34% 49%;
-    --accent-foreground: 0 0% 7%;
+    --card-foreground: 210 12% 9%;
+    --popover: 42 20% 96%;
+    --popover-foreground: 210 12% 9%;
+    --primary: 210 12% 9%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 38 18% 92%;
+    --secondary-foreground: 210 12% 9%;
+    --muted: 38 12% 90%;
+    --muted-foreground: 210 7% 40%;
+    --accent: 37 66% 58%;
+    --accent-foreground: 210 12% 9%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
-    --border: 40 8% 86%;
-    --input: 40 8% 86%;
-    --ring: 30 34% 49%;
+    --border: 210 10% 82%;
+    --input: 210 10% 82%;
+    --ring: 37 66% 58%;
     --radius: 0.25rem;
-    --font-heading: "Inter Tight", ui-sans-serif, system-ui, sans-serif;
+    --font-heading: "Manrope", ui-sans-serif, system-ui, sans-serif;
     --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
-    --font-display: "Inter Tight", ui-sans-serif, system-ui, sans-serif;
-    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-  }
-}
-
-@layer base {
-  * {
-    @apply border-border outline-ring/50;
+    --font-display: "Manrope", ui-sans-serif, system-ui, sans-serif;
   }
 
-  html {
-    scroll-behavior: smooth;
-    -webkit-font-smoothing: antialiased;
-  }
+  * { @apply border-border outline-ring/50; }
+
+  html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
 
   body {
-    @apply bg-background text-foreground font-body;
+    @apply text-foreground font-body;
+    background:
+      radial-gradient(circle at 10% 10%, rgba(195,165,113,.12), transparent 28%),
+      radial-gradient(circle at 85% 30%, rgba(0,0,0,.055), transparent 30%),
+      linear-gradient(135deg, #f5f4ef, #eeece6);
   }
 
-  ::selection {
-    background-color: hsl(var(--accent));
-    color: hsl(var(--accent-foreground));
-  }
+  ::selection { background: hsl(var(--accent)); color: hsl(var(--accent-foreground)); }
 }
 
 @layer components {
-  .eyebrow {
-    @apply text-[0.7rem] uppercase tracking-[0.25em] font-medium;
+  .eyebrow { @apply text-[0.68rem] uppercase tracking-[0.24em] font-medium; }
+  .display { @apply font-heading font-extrabold tracking-[-0.045em] leading-[0.92]; }
+
+  .glass-panel {
+    @apply border border-white/20 bg-white/[0.10] backdrop-blur-xl;
+    box-shadow: 0 20px 70px rgba(0,0,0,.18), inset 0 1px 0 rgba(255,255,255,.18);
   }
-  .display {
-    @apply font-heading font-bold tracking-[-0.03em] leading-[0.95];
+
+  .glass-dark {
+    @apply border border-white/10 bg-black/35 backdrop-blur-xl;
+    box-shadow: 0 18px 60px rgba(0,0,0,.24), inset 0 1px 0 rgba(255,255,255,.08);
   }
-  .rhythm-line {
-    @apply h-px w-full bg-border;
+
+  .glass-light {
+    @apply border border-white/60 bg-white/35 backdrop-blur-xl;
+    box-shadow: 0 18px 50px rgba(20,20,20,.07), inset 0 1px 0 rgba(255,255,255,.7);
+  }
+
+  .glass-pill {
+    @apply inline-flex items-center justify-center w-11 h-11 rounded-full border border-white/25 bg-white/10 backdrop-blur-md text-[.65rem] uppercase tracking-[.18em];
+  }
+
+  .glass-cta {
+    @apply h-14 px-7 inline-flex items-center gap-3 border border-white/50 bg-white/[0.88] text-black backdrop-blur-xl text-[.68rem] uppercase tracking-[.2em] font-semibold transition-all duration-300;
+    box-shadow: 0 12px 35px rgba(0,0,0,.14), inset 0 1px 0 rgba(255,255,255,.8);
+  }
+  .glass-cta:hover { @apply bg-white text-black; transform: translateY(-2px); }
+  .glass-cta-dark { @apply bg-black/25 text-white border-white/30; }
+  .glass-cta-dark:hover { @apply bg-black/45 text-white; }
+
+  .site-texture {
+    background:
+      radial-gradient(circle at 20% 20%, rgba(188,157,104,.12), transparent 24%),
+      radial-gradient(circle at 80% 75%, rgba(0,0,0,.07), transparent 25%),
+      repeating-linear-gradient(135deg, rgba(0,0,0,.025) 0 1px, transparent 1px 9px);
+  }
+
+  .site-grid {
+    background-image:
+      linear-gradient(rgba(0,0,0,.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,0,0,.035) 1px, transparent 1px);
+    background-size: 70px 70px;
+  }
+
+  .whatsapp-float {
+    position: fixed;
+    right: 22px;
+    bottom: 22px;
+    z-index: 100;
+    width: 62px;
+    height: 62px;
+    border-radius: 999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background: linear-gradient(145deg, #25D366, #0da94d);
+    border: 1px solid rgba(255,255,255,.75);
+    box-shadow: 0 0 0 5px rgba(37,211,102,.10), 0 0 28px rgba(37,211,102,.55), 0 14px 40px rgba(0,0,0,.28);
+    transition: transform .25s ease, box-shadow .25s ease;
+  }
+  .whatsapp-float:hover {
+    transform: translateY(-4px) scale(1.04);
+    box-shadow: 0 0 0 7px rgba(37,211,102,.12), 0 0 42px rgba(37,211,102,.72), 0 18px 45px rgba(0,0,0,.3);
+  }
+  .whatsapp-pulse {
+    position: absolute;
+    inset: -7px;
+    border-radius: inherit;
+    border: 1px solid rgba(37,211,102,.45);
+    animation: waPulse 2.2s ease-out infinite;
+  }
+  @keyframes waPulse {
+    0% { transform: scale(.92); opacity: .8; }
+    75%,100% { transform: scale(1.28); opacity: 0; }
+  }
+
+  @media (max-width: 640px) {
+    .whatsapp-float { right: 16px; bottom: 16px; width: 56px; height: 56px; }
   }
 }

@@ -1,53 +1,41 @@
-import { ArrowUpRight } from "lucide-react";
+import { ArrowDownRight } from "lucide-react";
 import { Image } from "@/components/ui/image";
 import Reveal from "./Reveal";
-import { WHATSAPP_PROJECT_LINK } from "@/lib/site";
-
-const IMG = "https://media.base44.com/images/public/6ab396a02522124dc8a9aa2a/1cd1c7cce_generated_1bacc409.jpg";
 
 export default function Introduction() {
   return (
-    <section id="about" className="bg-background">
-      <div className="mx-auto max-w-[1600px] px-6 md:px-[8vw] py-20 md:py-32">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-end">
-          <div className="lg:col-span-6">
-            <Reveal>
-              <p className="eyebrow text-accent mb-6">Who we are</p>
-              <h2 className="display text-foreground text-5xl md:text-6xl lg:text-7xl">
-                Built for the long term.
-              </h2>
-            </Reveal>
-            <Reveal delay={0.1}>
-              <p className="mt-8 text-lg text-muted-foreground leading-relaxed max-w-md">
-                We provide construction and roofing services focused on practical execution, quality
-                workmanship and finished results built for everyday use.
-              </p>
-            </Reveal>
-            <Reveal delay={0.18}>
-              <a
-                href={WHATSAPP_PROJECT_LINK}
-                target="_blank"
-                rel="noreferrer"
-                className="group mt-10 inline-flex items-center gap-2 eyebrow text-foreground hover:text-accent transition-colors"
-              >
-                Talk to us about your project
-                <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-              </a>
-            </Reveal>
+    <section id="project-intro" className="relative overflow-hidden">
+      <div className="absolute inset-0">
+        <Image
+          src="/ngenaz/hero-side.png"
+          alt="Ngenaz Builders residential project, side elevation"
+          className="w-full h-full"
+          fittingType="fill"
+        />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(7,9,10,.82),rgba(7,9,10,.48)_48%,rgba(7,9,10,.16))]" />
+      </div>
+
+      <div className="relative mx-auto max-w-[1600px] px-6 md:px-[7vw] py-28 md:py-44">
+        <Reveal>
+          <div className="max-w-3xl">
+            <p className="eyebrow text-white/70 mb-6">The project</p>
+            <h2 className="font-heading font-extrabold tracking-[-.05em] text-white text-5xl md:text-7xl lg:text-8xl leading-[.9]">
+              Built spaces.
+              <br />
+              <span className="text-white/65">Real results.</span>
+            </h2>
+            <p className="mt-8 text-white/75 text-lg md:text-xl leading-relaxed max-w-2xl">
+              This project reflects the kind of residential construction Ngenaz Builders delivers:
+              substantial structure, considered finishes and a finished space made for everyday living.
+            </p>
+            <div className="mt-10 flex items-center gap-3 text-white/80">
+              <span className="w-11 h-11 rounded-full border border-white/35 backdrop-blur-md flex items-center justify-center">
+                <ArrowDownRight className="w-4 h-4" />
+              </span>
+              <span className="eyebrow">More of our work below</span>
+            </div>
           </div>
-          <div className="lg:col-span-6">
-            <Reveal delay={0.12}>
-              <div className="relative aspect-[4/5] overflow-hidden">
-                <Image
-                  src={IMG}
-                  alt="Construction site with brickwork and steel structure at golden hour"
-                  className="w-full h-full"
-                  fittingType="fill"
-                />
-              </div>
-            </Reveal>
-          </div>
-        </div>
+        </Reveal>
       </div>
     </section>
   );

@@ -1,89 +1,103 @@
 import { motion } from "framer-motion";
-import { ArrowUpRight, ChevronDown } from "lucide-react";
+import { ArrowDownRight, ArrowUpRight } from "lucide-react";
 import { Image } from "@/components/ui/image";
-import { WHATSAPP_QUOTE_LINK, WHATSAPP_LINK, WHATSAPP_NUMBER } from "@/lib/site";
+import { WHATSAPP_QUOTE_LINK, WHATSAPP_LINK } from "@/lib/site";
 
-const HERO_IMG = "https://media.base44.com/images/public/6ab396a02522124dc8a9aa2a/660aa0201_generated_e457e164.jpg";
+const HERO_IMG = "/ngenaz/hero-courtyard.png";
 
 export default function Hero() {
   return (
-    <section id="top" className="relative h-screen min-h-[620px] w-full overflow-hidden bg-foreground">
+    <section id="top" className="relative min-h-[720px] h-[100svh] w-full overflow-hidden">
       <motion.div
         className="absolute inset-0"
-        initial={{ scale: 1.12 }}
+        initial={{ scale: 1.08 }}
         animate={{ scale: 1 }}
-        transition={{ duration: 1.6, ease: [0.22, 1, 0.36, 1] }}
+        transition={{ duration: 1.8, ease: [0.22, 1, 0.36, 1] }}
       >
         <Image
           src={HERO_IMG}
-          alt="Modern Zimbabwean building with a strong charcoal metal roof under African sunlight"
+          alt="Ngenaz Builders modern residential construction project"
           className="w-full h-full"
           fittingType="fill"
         />
       </motion.div>
-      <div className="absolute inset-0 bg-gradient-to-t from-foreground/85 via-foreground/45 to-foreground/30" />
 
-      <div className="relative h-full mx-auto max-w-[1600px] px-6 md:px-[8vw] flex flex-col justify-end pb-16 md:pb-24">
-        <motion.p
-          className="eyebrow text-background/70 mb-5"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.2 }}
-        >
-          Construction / Roofing
-        </motion.p>
-        <motion.h1
-          className="display text-background text-[15vw] md:text-[8vw] leading-[0.92]"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-        >
-          Built properly.
-          <br />
-          <span className="text-accent">Roofed right.</span>
-        </motion.h1>
-        <motion.p
-          className="mt-7 max-w-xl text-background/80 text-base md:text-lg leading-relaxed"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.55 }}
-        >
-          Professional construction and roofing solutions for property owners and building projects.
-        </motion.p>
-        <motion.div
-          className="mt-9 flex flex-col sm:flex-row gap-3 sm:gap-4"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.7 }}
-        >
-          <a
-            href={WHATSAPP_QUOTE_LINK}
-            target="_blank"
-            rel="noreferrer"
-            className="group inline-flex items-center justify-center gap-2 bg-accent text-accent-foreground px-7 h-14 text-[0.72rem] uppercase tracking-[0.2em] font-semibold hover:bg-background hover:text-foreground transition-colors"
+      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(5,7,8,.76)_0%,rgba(5,7,8,.42)_44%,rgba(5,7,8,.12)_100%)]" />
+      <div className="absolute inset-0 bg-[linear-gradient(0deg,rgba(5,7,8,.62)_0%,transparent_42%,rgba(5,7,8,.18)_100%)]" />
+
+      <div className="relative z-10 mx-auto max-w-[1600px] h-full px-6 md:px-[7vw] flex items-end pb-20 md:pb-24">
+        <div className="max-w-5xl">
+          <motion.div
+            className="flex items-center gap-4 mb-6"
+            initial={{ opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: .7, delay: .15 }}
           >
-            Request a Quote
-            <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-          </a>
-          <a
-            href={WHATSAPP_LINK}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center justify-center gap-2 border border-background/40 text-background px-7 h-14 text-[0.72rem] uppercase tracking-[0.2em] font-semibold hover:bg-background hover:text-foreground transition-colors"
+            <span className="eyebrow text-white/75">Ngenaz Builders</span>
+            <span className="h-px w-16 bg-white/45" />
+            <span className="eyebrow text-white/55">Construction · Roofing</span>
+          </motion.div>
+
+          <motion.h1
+            className="font-heading font-extrabold tracking-[-.055em] text-white text-[clamp(3.5rem,8.5vw,9rem)] leading-[.86] max-w-5xl"
+            initial={{ opacity: 0, y: 35 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: .95, delay: .25, ease: [0.22,1,0.36,1] }}
           >
-            WhatsApp Us
-          </a>
-        </motion.div>
-        <p className="mt-6 eyebrow text-background/50">{WHATSAPP_NUMBER}</p>
+            Built for the
+            <br />
+            <span className="text-white/70">way forward.</span>
+          </motion.h1>
+
+          <motion.p
+            className="mt-8 max-w-2xl text-white/78 text-base md:text-lg leading-relaxed"
+            initial={{ opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: .7, delay: .48 }}
+          >
+            Construction and roofing work delivered with practical execution,
+            careful workmanship and a focus on the finished result.
+          </motion.p>
+
+          <motion.div
+            className="mt-9 flex flex-wrap gap-3"
+            initial={{ opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: .7, delay: .62 }}
+          >
+            <a
+              href={WHATSAPP_QUOTE_LINK}
+              target="_blank"
+              rel="noreferrer"
+              className="glass-cta group"
+            >
+              Request a quote
+              <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+            </a>
+            <a
+              href={WHATSAPP_LINK}
+              target="_blank"
+              rel="noreferrer"
+              className="glass-cta glass-cta-dark group"
+            >
+              WhatsApp us
+              <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+            </a>
+          </motion.div>
+        </div>
       </div>
 
-      <motion.div
-        className="absolute bottom-7 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-background/60"
-        animate={{ y: [0, 8, 0] }}
-        transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
+      <motion.a
+        href="#project-intro"
+        className="absolute z-20 right-6 md:right-[7vw] bottom-8 md:bottom-10 text-white/75 hover:text-white transition-colors flex items-center gap-3"
+        animate={{ y: [0, 7, 0] }}
+        transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut" }}
       >
-        <ChevronDown className="w-5 h-5" />
-      </motion.div>
+        <span className="eyebrow hidden sm:block">Explore the work</span>
+        <span className="w-11 h-11 rounded-full border border-white/40 backdrop-blur-md flex items-center justify-center">
+          <ArrowDownRight className="w-4 h-4" />
+        </span>
+      </motion.a>
     </section>
   );
 }

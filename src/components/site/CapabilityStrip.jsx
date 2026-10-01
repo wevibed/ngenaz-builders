@@ -1,17 +1,24 @@
 import Reveal from "./Reveal";
 
-const ITEMS = ["Roofing", "Construction", "Building"];
+const ITEMS = [
+  ["Construction", "Residential & building work"],
+  ["Roofing", "Built into the project"],
+  ["Workmanship", "Focused on the finish"],
+];
 
 export default function CapabilityStrip() {
   return (
-    <section className="border-y border-border bg-background">
-      <div className="mx-auto max-w-[1600px] px-6 md:px-[8vw]">
-        <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-border">
-          {ITEMS.map((item, i) => (
-            <Reveal key={item} delay={i * 0.08}>
-              <div className="flex items-center justify-between py-8 md:py-10 group">
-                <span className="font-heading text-2xl md:text-3xl font-semibold tracking-tight">{item}</span>
-                <span className="eyebrow text-muted-foreground">0{i + 1}</span>
+    <section className="relative -mt-1 z-20">
+      <div className="mx-auto max-w-[1400px] px-4 md:px-[6vw]">
+        <div className="glass-panel grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-white/15">
+          {ITEMS.map(([title, text], i) => (
+            <Reveal key={title} delay={i * .08}>
+              <div className="px-6 md:px-9 py-7 md:py-8 flex items-center justify-between gap-6">
+                <div>
+                  <span className="eyebrow text-accent">{String(i + 1).padStart(2, "0")}</span>
+                  <h3 className="mt-2 font-heading font-bold text-xl md:text-2xl text-white">{title}</h3>
+                </div>
+                <p className="text-sm text-white/55 max-w-[150px] text-right">{text}</p>
               </div>
             </Reveal>
           ))}

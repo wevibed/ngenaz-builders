@@ -14,7 +14,7 @@ import MobileCTA from "@/components/site/MobileCTA";
 
 export default function Home() {
   return (
-    <div className="bg-background">
+    <div className="min-h-screen overflow-x-hidden">
       <Navbar />
       <main>
         <Hero />

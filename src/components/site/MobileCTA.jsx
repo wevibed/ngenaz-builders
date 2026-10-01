@@ -3,16 +3,16 @@ import { WHATSAPP_LINK } from "@/lib/site";
 
 export default function MobileCTA() {
   return (
-    <div className="md:hidden fixed bottom-0 inset-x-0 z-40 p-3 pb-[max(0.75rem,env(safe-area-inset-bottom)] bg-gradient-to-t from-background via-background/90 to-transparent">
-      <a
-        href={WHATSAPP_LINK}
-        target="_blank"
-        rel="noreferrer"
-        className="flex items-center justify-center gap-2 h-14 bg-accent text-accent-foreground text-[0.72rem] uppercase tracking-[0.2em] font-semibold shadow-lg"
-      >
-        <MessageCircle className="w-4 h-4" />
-        WhatsApp Us
-      </a>
-    </div>
+    <a
+      href={WHATSAPP_LINK}
+      target="_blank"
+      rel="noreferrer"
+      aria-label="Chat with Ngenaz Builders on WhatsApp"
+      className="whatsapp-float"
+    >
+      <span className="whatsapp-pulse" />
+      <MessageCircle className="relative z-10 w-6 h-6" strokeWidth={2.3} />
+      <span className="absolute -top-2 -right-1 w-3 h-3 rounded-full bg-[#25D366] border-2 border-white/80" />
+    </a>
   );
 }
