@@ -1,0 +1,154 @@
+name: Replace With Ngenaz Final Projects
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  replace-site:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Find final Ngenaz ZIP
+        id: find_zip
+        shell: bash
+        run: |
+          ZIP_FILE=$(find . -maxdepth 1 -type f \
+            -name "ngenaz-builders-final-projects-categorized.zip" \
+            | head -n 1)
+
+          if [ -z "$ZIP_FILE" ]; then
+            echo "ERROR: Final Ngenaz ZIP not found."
+            exit 1
+          fi
+
+          echo "Found: $ZIP_FILE"
+          echo "zip_file=$ZIP_FILE" >> "$GITHUB_OUTPUT"
+
+      - name: Extract final site
+        shell: bash
+        run: |
+          rm -rf /tmp/ngenaz-final
+          mkdir -p /tmp/ngenaz-final
+
+          unzip -q "${{ steps.find_zip.outputs.zip_file }}" \
+            -d /tmp/ngenaz-final
+
+      - name: Locate project root
+        id: project
+        shell: bash
+        run: |
+          PROJECT_ROOT=$(dirname "$(find /tmp/ngenaz-final \
+            -name package.json \
+            -type f | head -n 1)")
+
+          if [ -z "$PROJECT_ROOT" ] || \
+             [ ! -f "$PROJECT_ROOT/package.json" ]; then
+            echo "ERROR: package.json not found."
+            exit 1
+          fi
+
+          echo "Project root: $PROJECT_ROOT"
+          echo "project_root=$PROJECT_ROOT" >> "$GITHUB_OUTPUT"
+
+      - name: Verify Ngenaz assets
+        shell: bash
+        run: |
+          PROJECT_ROOT="${{ steps.project.outputs.project_root }}"
+
+          test -f "$PROJECT_ROOT/package.json"
+          test -f "$PROJECT_ROOT/index.html"
+
+          test -f "$PROJECT_ROOT/public/ngenaz/hero-courtyard.png"
+          test -f "$PROJECT_ROOT/public/ngenaz/hero-side.png"
+          test -f "$PROJECT_ROOT/public/ngenaz/ngenaz-logo.png"
+
+          test -d "$PROJECT_ROOT/public/ngenaz/work"
+
+          IMAGE_COUNT=$(find \
+            "$PROJECT_ROOT/public/ngenaz/work" \
+            -type f | wc -l)
+
+          echo "Project images found: $IMAGE_COUNT"
+
+          if [ "$IMAGE_COUNT" -lt 1 ]; then
+            echo "ERROR: No project images found."
+            exit 1
+          fi
+
+      - name: Install dependencies
+        shell: bash
+        run: |
+          PROJECT_ROOT="${{ steps.project.outputs.project_root }}"
+          cd "$PROJECT_ROOT"
+
+          npm install
+
+          npm install -D tailwindcss-animate@^1.0.7
+
+      - name: Build final site
+        shell: bash
+        run: |
+          PROJECT_ROOT="${{ steps.project.outputs.project_root }}"
+          cd "$PROJECT_ROOT"
+
+          npm run build
+
+      - name: Replace current repository
+        shell: bash
+        run: |
+          PROJECT_ROOT="${{ steps.project.outputs.project_root }}"
+
+          find . -mindepth 1 -maxdepth 1 \
+            ! -name ".git" \
+            ! -name ".github" \
+            -exec rm -rf {} +
+
+          cp -a "$PROJECT_ROOT"/. .
+
+          rm -f *.zip
+
+      - name: Final verification
+        shell: bash
+        run: |
+          test -f package.json
+          test -f index.html
+
+          test -f public/ngenaz/hero-courtyard.png
+          test -f public/ngenaz/hero-side.png
+          test -f public/ngenaz/ngenaz-logo.png
+
+          test -d public/ngenaz/work
+
+          IMAGE_COUNT=$(find public/ngenaz/work -type f | wc -l)
+
+          echo "--------------------------------"
+          echo "NGENAZ FINAL SITE"
+          echo "Project images: $IMAGE_COUNT"
+          echo "Hero: verified"
+          echo "Logo: verified"
+          echo "Projects: verified"
+          echo "Build: verified"
+          echo "--------------------------------"
+
+      - name: Commit and push
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email \
+            "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add -A
+
+          git commit \
+            -m "Replace with final Ngenaz Builders projects site" || \
+            echo "No changes to commit."
+
+          git push
