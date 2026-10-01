@@ -1,0 +1,139 @@
+name: Replace With Ngenaz Final
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  replace-site:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Find Ngenaz ZIP
+        id: find_zip
+        shell: bash
+        run: |
+          ZIP_FILE=$(find . -maxdepth 1 -type f -name "ngenaz-builders-final-hero-fixed.zip" | head -n 1)
+
+          if [ -z "$ZIP_FILE" ]; then
+            echo "ERROR: ngenaz-builders-final-hero-fixed.zip not found."
+            exit 1
+          fi
+
+          echo "Found: $ZIP_FILE"
+          echo "zip_file=$ZIP_FILE" >> "$GITHUB_OUTPUT"
+
+      - name: Extract final Ngenaz site
+        shell: bash
+        run: |
+          rm -rf /tmp/ngenaz-final
+          mkdir -p /tmp/ngenaz-final
+
+          unzip -q "${{ steps.find_zip.outputs.zip_file }}" -d /tmp/ngenaz-final
+
+      - name: Locate project root
+        id: project
+        shell: bash
+        run: |
+          PROJECT_ROOT=$(dirname "$(find /tmp/ngenaz-final -name package.json -type f | head -n 1)")
+
+          if [ -z "$PROJECT_ROOT" ] || [ ! -f "$PROJECT_ROOT/package.json" ]; then
+            echo "ERROR: package.json not found."
+            exit 1
+          fi
+
+          echo "Project root: $PROJECT_ROOT"
+          echo "project_root=$PROJECT_ROOT" >> "$GITHUB_OUTPUT"
+
+      - name: Validate required Ngenaz assets
+        shell: bash
+        run: |
+          PROJECT_ROOT="${{ steps.project.outputs.project_root }}"
+
+          test -f "$PROJECT_ROOT/package.json"
+          test -f "$PROJECT_ROOT/index.html"
+
+          test -f "$PROJECT_ROOT/public/ngenaz/hero-courtyard.png"
+          test -f "$PROJECT_ROOT/public/ngenaz/hero-side.png"
+          test -f "$PROJECT_ROOT/public/ngenaz/ngenaz-logo.png"
+
+          WORK_COUNT=$(find "$PROJECT_ROOT/public/ngenaz/work" -type f | wc -l)
+
+          echo "Ngenaz project images found: $WORK_COUNT"
+
+          if [ "$WORK_COUNT" -lt 1 ]; then
+            echo "ERROR: No project images found."
+            exit 1
+          fi
+
+      - name: Install dependencies
+        shell: bash
+        run: |
+          PROJECT_ROOT="${{ steps.project.outputs.project_root }}"
+          cd "$PROJECT_ROOT"
+
+          npm install
+          npm install -D tailwindcss-animate@^1.0.7
+
+      - name: Build final site
+        shell: bash
+        run: |
+          PROJECT_ROOT="${{ steps.project.outputs.project_root }}"
+          cd "$PROJECT_ROOT"
+
+          npm run build
+
+      - name: Replace existing repository
+        shell: bash
+        run: |
+          PROJECT_ROOT="${{ steps.project.outputs.project_root }}"
+
+          # Remove old site files but preserve Git metadata and workflow directory
+          find . -mindepth 1 -maxdepth 1 \
+            ! -name ".git" \
+            ! -name ".github" \
+            -exec rm -rf {} +
+
+          # Copy finalized Ngenaz project
+          cp -a "$PROJECT_ROOT"/. .
+
+          # Remove ZIP from repository
+          rm -f *.zip
+
+      - name: Verify replacement
+        shell: bash
+        run: |
+          echo "Checking final repository..."
+
+          test -f package.json
+          test -f index.html
+          test -f public/ngenaz/hero-courtyard.png
+          test -f public/ngenaz/hero-side.png
+          test -f public/ngenaz/ngenaz-logo.png
+
+          WORK_COUNT=$(find public/ngenaz/work -type f | wc -l)
+
+          echo "Project images: $WORK_COUNT"
+          echo "Ngenaz final site verified."
+
+      - name: Commit and push
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add -A
+
+          git commit -m "Replace site with finalized Ngenaz Builders website" || {
+            echo "No changes to commit."
+            exit 0
+          }
+
+          git push
