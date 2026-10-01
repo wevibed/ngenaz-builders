@@ -128,19 +128,3 @@
     .whatsapp-float { right: 16px; bottom: 16px; width: 56px; height: 56px; }
   }
 }
-
-
-/* Ngenaz final responsive composition */
-@media (max-width: 767px) {
-  #top { min-height: 100svh; height: 100svh; }
-  #top > div:first-child img,
-  #top > div:first-child picture { object-position: center center; }
-  #top .max-w-5xl { padding-bottom: 0.5rem; }
-  #top h1 { font-size: clamp(3rem, 13vw, 4.6rem); line-height: .88; max-width: 11ch; }
-  #top p { max-width: 34rem; font-size: .98rem; line-height: 1.6; }
-  #top .glass-cta { width: 100%; justify-content: center; }
-  #top .flex.flex-wrap { width: min(100%, 24rem); }
-  header nav img { max-height: 42px; width: auto; }
-}
-
-.project-image { display:block; width:100%; height:auto; }

@@ -3,29 +3,34 @@ import { ArrowDownRight, ArrowUpRight } from "lucide-react";
 import { Image } from "@/components/ui/image";
 import { WHATSAPP_QUOTE_LINK, WHATSAPP_LINK } from "@/lib/site";
 
-const HERO_IMG = "/ngenaz/hero-courtyard.png";
+const HERO_DESKTOP = "/ngenaz/hero-courtyard.png";
 
 export default function Hero() {
   return (
     <section id="top" className="relative min-h-[720px] h-[100svh] w-full overflow-hidden">
+      <div className="absolute inset-0 md:hidden overflow-hidden bg-black">
+        <img src={HERO_DESKTOP} alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover scale-110 blur-2xl opacity-45" />
+        <img src={HERO_DESKTOP} alt="Ngenaz Builders residential construction project" className="absolute inset-0 w-full h-full object-contain" />
+      </div>
+
       <motion.div
-        className="absolute inset-0"
-        initial={{ scale: 1.08 }}
+        className="absolute inset-0 hidden md:block"
+        initial={{ scale: 1.02 }}
         animate={{ scale: 1 }}
-        transition={{ duration: 1.8, ease: [0.22, 1, 0.36, 1] }}
+        transition={{ duration: 1.4, ease: [0.22, 1, 0.36, 1] }}
       >
         <Image
-          src={HERO_IMG}
-          alt="Ngenaz Builders modern residential construction project"
-          className="w-full h-full"
+          src={HERO_DESKTOP}
+          alt="Ngenaz Builders residential construction project"
+          className="w-full h-full object-cover"
           fittingType="fill"
         />
       </motion.div>
 
-      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(5,7,8,.76)_0%,rgba(5,7,8,.42)_44%,rgba(5,7,8,.12)_100%)]" />
-      <div className="absolute inset-0 bg-[linear-gradient(0deg,rgba(5,7,8,.62)_0%,transparent_42%,rgba(5,7,8,.18)_100%)]" />
+      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(5,7,8,.68)_0%,rgba(5,7,8,.34)_48%,rgba(5,7,8,.08)_100%)]" />
+      <div className="absolute inset-0 bg-[linear-gradient(0deg,rgba(5,7,8,.70)_0%,transparent_50%,rgba(5,7,8,.14)_100%)]" />
 
-      <div className="relative z-10 mx-auto max-w-[1600px] h-full px-6 md:px-[7vw] flex items-end pb-20 md:pb-24">
+      <div className="relative z-10 mx-auto max-w-[1600px] h-full px-6 md:px-[7vw] flex items-end pb-16 md:pb-24">
         <div className="max-w-5xl">
           <motion.div
             className="flex items-center gap-4 mb-6"
@@ -33,23 +38,23 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: .7, delay: .15 }}
           >
-            <span className="h-px w-12 md:w-16 bg-white/55" />
-            <span className="eyebrow text-white/80">Construction · Roofing</span>
+            <span className="h-px w-12 bg-white/55" />
+            <span className="eyebrow text-white/75">Construction · Roofing</span>
           </motion.div>
 
           <motion.h1
-            className="font-heading font-extrabold tracking-[-.055em] text-white text-[clamp(3.5rem,8.5vw,9rem)] leading-[.86] max-w-5xl"
+            className="font-heading font-extrabold tracking-[-.055em] text-white text-[clamp(3rem,8.5vw,9rem)] leading-[.86] max-w-5xl"
             initial={{ opacity: 0, y: 35 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: .95, delay: .25, ease: [0.22,1,0.36,1] }}
           >
             We leave no
             <br />
-            <span className="text-white/72">stone unturned.</span>
+            <span className="text-white/70">stone unturned.</span>
           </motion.h1>
 
           <motion.p
-            className="mt-8 max-w-2xl text-white/78 text-base md:text-lg leading-relaxed"
+            className="mt-8 max-w-2xl text-white/80 text-base md:text-lg leading-relaxed"
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: .7, delay: .48 }}
@@ -64,21 +69,11 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: .7, delay: .62 }}
           >
-            <a
-              href={WHATSAPP_QUOTE_LINK}
-              target="_blank"
-              rel="noreferrer"
-              className="glass-cta group"
-            >
+            <a href={WHATSAPP_QUOTE_LINK} target="_blank" rel="noreferrer" className="glass-cta group">
               Request a quote
               <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
             </a>
-            <a
-              href={WHATSAPP_LINK}
-              target="_blank"
-              rel="noreferrer"
-              className="glass-cta glass-cta-dark group"
-            >
+            <a href={WHATSAPP_LINK} target="_blank" rel="noreferrer" className="glass-cta glass-cta-dark group">
               WhatsApp us
               <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
             </a>

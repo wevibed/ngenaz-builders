@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import PageNotFound from './lib/PageNotFound';
 import ScrollToTop from './components/ScrollToTop';
 import Home from '@/pages/Home';
+import Projects from '@/pages/Projects';
 // Add page imports here
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
         <Routes>
           {/* Add your page Route elements here */}
           <Route path="/" element={<Home />} />
+          <Route path="/projects" element={<Projects />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
       </Router>
