@@ -1,0 +1,149 @@
+name: Replace With Optimized Ngenaz Site
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  replace-site:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Find optimized ZIP
+        id: zip
+        shell: bash
+        run: |
+          ZIP_FILE="./ngenaz-builders-optimized.zip"
+
+          if [ ! -f "$ZIP_FILE" ]; then
+            echo "ERROR: ngenaz-builders-optimized.zip was not found."
+            echo "Make sure the ZIP is in the repository root."
+            exit 1
+          fi
+
+          echo "Found optimized ZIP:"
+          ls -lh "$ZIP_FILE"
+
+          echo "zip_file=$ZIP_FILE" >> "$GITHUB_OUTPUT"
+
+      - name: Extract optimized site
+        shell: bash
+        run: |
+          rm -rf /tmp/ngenaz-optimized
+          mkdir -p /tmp/ngenaz-optimized
+
+          unzip -q "${{ steps.zip.outputs.zip_file }}" \
+            -d /tmp/ngenaz-optimized
+
+          echo "ZIP extracted successfully."
+
+      - name: Locate site root
+        id: site
+        shell: bash
+        run: |
+          PACKAGE_JSON=$(find /tmp/ngenaz-optimized \
+            -name package.json \
+            -type f \
+            | head -n 1)
+
+          if [ -z "$PACKAGE_JSON" ]; then
+            echo "ERROR: package.json was not found inside the ZIP."
+            exit 1
+          fi
+
+          SITE_ROOT=$(dirname "$PACKAGE_JSON")
+
+          echo "Site root:"
+          echo "$SITE_ROOT"
+
+          echo "site_root=$SITE_ROOT" >> "$GITHUB_OUTPUT"
+
+      - name: Verify optimized site
+        shell: bash
+        run: |
+          SITE_ROOT="${{ steps.site.outputs.site_root }}"
+
+          test -f "$SITE_ROOT/package.json"
+          test -f "$SITE_ROOT/index.html"
+
+          echo "package.json: OK"
+          echo "index.html: OK"
+
+          if [ -d "$SITE_ROOT/public" ]; then
+            echo "public directory: OK"
+          fi
+
+      - name: Install dependencies
+        shell: bash
+        run: |
+          SITE_ROOT="${{ steps.site.outputs.site_root }}"
+          cd "$SITE_ROOT"
+
+          npm install
+
+          # Safety dependency for the existing Tailwind configuration
+          npm install -D tailwindcss-animate@^1.0.7
+
+      - name: Build optimized site
+        shell: bash
+        run: |
+          SITE_ROOT="${{ steps.site.outputs.site_root }}"
+          cd "$SITE_ROOT"
+
+          npm run build
+
+      - name: Replace current repository
+        shell: bash
+        run: |
+          SITE_ROOT="${{ steps.site.outputs.site_root }}"
+
+          echo "Removing old site..."
+
+          find . -mindepth 1 -maxdepth 1 \
+            ! -name ".git" \
+            ! -name ".github" \
+            -exec rm -rf {} +
+
+          echo "Copying optimized Ngenaz site..."
+
+          cp -a "$SITE_ROOT"/. .
+
+      - name: Remove uploaded ZIP
+        shell: bash
+        run: |
+          rm -f ngenaz-builders-optimized.zip
+
+      - name: Final verification
+        shell: bash
+        run: |
+          echo "Checking final repository..."
+
+          test -f package.json
+          test -f index.html
+
+          echo "package.json: OK"
+          echo "index.html: OK"
+
+          echo "Final Ngenaz optimized site is ready."
+
+      - name: Commit optimized site
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email \
+            "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add -A
+
+          git commit \
+            -m "Replace Ngenaz site with optimized build" || \
+            echo "No changes to commit."
+
+          git push
