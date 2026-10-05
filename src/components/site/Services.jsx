@@ -47,6 +47,7 @@ export default function Services() {
                   alt={service.title}
                   className="absolute inset-0 w-full h-full transition-transform duration-[1.2s] group-hover:scale-105"
                   fittingType="fill"
+                  sizes="(min-width:1024px) 50vw, 100vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-black/5" />
                 <div className="absolute inset-0 ring-1 ring-inset ring-white/15" />
@@ -56,7 +57,7 @@ export default function Services() {
                     <ArrowUpRight className="w-6 h-6 text-white/75 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
                   </div>
                   <div>
-                    <h3 className="font-heading font-extrabold tracking-[-.04em] text-white text-5xl md:text-7xl">{service.title}</h3>
+                    <h3 className="font-heading font-extrabold tracking-[-.04em] text-white text-[2.5rem] sm:text-5xl md:text-7xl">{service.title}</h3>
                     <p className="mt-5 max-w-md text-white/75 text-base md:text-lg leading-relaxed">{service.description}</p>
                     <span className="mt-7 inline-flex items-center gap-2 eyebrow text-white/90">Discuss a project</span>
                   </div>

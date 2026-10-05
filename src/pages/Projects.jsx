@@ -43,7 +43,7 @@ export default function Projects() {
             {items.map((p, i) => (
               <Reveal key={p.name} delay={(i % 3) * .03}>
                 <button type="button" onClick={() => setActive(p)} className="group relative block w-full overflow-hidden text-left">
-                  <Image src={p.src} alt={`${p.category} — Ngenaz Builders project`} className="w-full aspect-[16/10] object-cover transition-transform duration-[1s] group-hover:scale-[1.04]" fittingType="fill" loading="lazy" />
+                  <Image src={p.src} alt={`${p.category} — Ngenaz Builders project`} className="w-full aspect-[16/10] object-cover transition-transform duration-[1s] group-hover:scale-[1.04]" fittingType="fill" sizes="(min-width:1024px) 33vw, (min-width:640px) 50vw, 100vw" loading="lazy" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                   <div className="absolute inset-x-0 bottom-0 p-5 flex items-end justify-between translate-y-3 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all">
                     <div><span className="eyebrow text-white/60">{p.index}</span><p className="mt-1 text-white font-heading font-semibold">{p.category}</p></div>

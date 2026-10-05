@@ -3,14 +3,16 @@ import { ArrowDownRight, ArrowUpRight } from "lucide-react";
 import { Image } from "@/components/ui/image";
 import { WHATSAPP_QUOTE_LINK, WHATSAPP_LINK } from "@/lib/site";
 
-const HERO_DESKTOP = "/ngenaz/hero-courtyard.png";
+const HERO = "/ngenaz/hero-courtyard.webp";
+const HERO_SMALL = "/ngenaz/hero-courtyard-640.webp";
+const HERO_SRCSET = "/ngenaz/hero-courtyard-640.webp 640w, /ngenaz/hero-courtyard-1024.webp 1024w, /ngenaz/hero-courtyard.webp 1600w";
 
 export default function Hero() {
   return (
     <section id="top" className="relative min-h-[720px] h-[100svh] w-full overflow-hidden">
       <div className="absolute inset-0 md:hidden overflow-hidden bg-black">
-        <img src={HERO_DESKTOP} alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover scale-110 blur-2xl opacity-45" />
-        <img src={HERO_DESKTOP} alt="Ngenaz Builders residential construction project" className="absolute inset-0 w-full h-full object-contain" />
+        <img src={HERO_SMALL} alt="" aria-hidden="true" decoding="async" className="absolute inset-0 w-full h-full object-cover scale-110 blur-2xl opacity-45" />
+        <img src={HERO} srcSet={HERO_SRCSET} sizes="100vw" width="1600" height="718" alt="Ngenaz Builders residential construction project" fetchPriority="high" decoding="async" className="absolute inset-0 w-full h-full object-contain" />
       </div>
 
       <motion.div
@@ -20,7 +22,9 @@ export default function Hero() {
         transition={{ duration: 1.4, ease: [0.22, 1, 0.36, 1] }}
       >
         <Image
-          src={HERO_DESKTOP}
+          src={HERO}
+          sizes="100vw"
+          loading="lazy"
           alt="Ngenaz Builders residential construction project"
           className="w-full h-full object-cover"
           fittingType="fill"

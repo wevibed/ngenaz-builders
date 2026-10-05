@@ -64,6 +64,7 @@ export default function OurWork() {
                   alt={`${p.category} — Ngenaz Builders project`}
                   className={`w-full object-cover transition-transform duration-[1s] group-hover:scale-[1.045] ${p.tall ? "aspect-[4/5]" : "aspect-[16/10]"}`}
                   fittingType="fill"
+                  sizes="(min-width:1024px) 33vw, (min-width:640px) 50vw, 100vw"
                   loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />

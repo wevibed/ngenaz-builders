@@ -1,5 +1,6 @@
 import * as React from "react"
 import { ResponsiveImage } from "./responsive-image"
+import manifest from "@/lib/image-manifest.json"
 import {
   getOriginalImageUrl,
   IMAGE_LOAD_MODE,
@@ -77,8 +78,28 @@ const Image = React.forwardRef(
     if (!parsed) {
       const isErrorMode = mode === IMAGE_LOAD_MODE.FALLBACK
       const imageSrc = isErrorMode ? FALLBACK_IMAGE_URL : getOriginalImageUrl(src, parsedSource)
+      // Local images: serve right-sized WebP variants and never let the browser
+      // squash the picture into a box with a different shape (the mobile "stretched" bug:
+      // w-full h-full without object-fit distorts the image to fill the box).
+      const local = !isErrorMode ? manifest[src] : null
+      const { sizes = "100vw", loading = "lazy", fetchPriority, ...rest } = imageProps
+      const fitClass = fittingType === "fit" ? "object-contain" : "max-md:object-cover"
+      const hasFit = /(^|\s)(max-md:|md:)?object-(cover|contain|fill|none|scale-down)/.test(rest.className || "")
       return (
-        <img ref={ref} src={imageSrc} {...imageProps} data-error-image={isErrorMode || undefined} />
+        <img
+          ref={ref}
+          src={imageSrc}
+          {...rest}
+          className={[rest.className, hasFit ? "" : fitClass].filter(Boolean).join(" ")}
+          srcSet={local ? local.set.map(([w, u]) => `${u} ${w}w`).join(", ") : undefined}
+          sizes={local ? sizes : undefined}
+          width={local ? local.w : undefined}
+          height={local ? local.h : undefined}
+          loading={loading}
+          fetchPriority={fetchPriority}
+          decoding="async"
+          data-error-image={isErrorMode || undefined}
+        />
       )
     }
 

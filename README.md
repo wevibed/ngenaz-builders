@@ -38,3 +38,8 @@ No environment variables are required.
   Base44's media CDN (`media.base44.com`) — a leftover external dependency from the original build
   platform, not something this repo controls. If that CDN is ever taken down, those image URLs
   will need to be re-hosted (e.g. to Cloudflare R2/Images).
+
+## Image optimisation (mobile fix + speed)
+- `src/components/ui/image.jsx`: local images are now served as responsive WebP (`srcset`/`sizes`, lazy, async decode) and get `object-cover` on mobile so they are never squashed into a differently-shaped box. Desktop layout is unchanged.
+- Hero PNGs (2.2 MB each) became WebP (~30-120 KB per size); originals are kept in `source-images/` (not deployed). The hero is preloaded in `index.html`.
+- Adding photos: put them in `public/ngenaz/work/`, run `python3 scripts/optimize-images.py`, then rebuild.

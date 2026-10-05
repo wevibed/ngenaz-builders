@@ -1,0 +1,1070 @@
+{
+ "/ngenaz/hero-courtyard.webp": {
+  "w": 1600,
+  "h": 718,
+  "set": [
+   [
+    640,
+    "/ngenaz/hero-courtyard-640.webp"
+   ],
+   [
+    1024,
+    "/ngenaz/hero-courtyard-1024.webp"
+   ],
+   [
+    1600,
+    "/ngenaz/hero-courtyard.webp"
+   ]
+  ]
+ },
+ "/ngenaz/hero-side.webp": {
+  "w": 1600,
+  "h": 720,
+  "set": [
+   [
+    640,
+    "/ngenaz/hero-side-640.webp"
+   ],
+   [
+    1024,
+    "/ngenaz/hero-side-1024.webp"
+   ],
+   [
+    1600,
+    "/ngenaz/hero-side.webp"
+   ]
+  ]
+ },
+ "/ngenaz/work/IMG-20260929-WA0091.webp": {
+  "w": 484,
+  "h": 1188,
+  "set": [
+   [
+    480,
+    "/ngenaz/work/IMG-20260929-WA0091-480.webp"
+   ],
+   [
+    484,
+    "/ngenaz/work/IMG-20260929-WA0091.webp"
+   ]
+  ]
+ },
+ "/ngenaz/work/IMG-20260929-WA0092.webp": {
+  "w": 1000,
+  "h": 750,
+  "set": [
+   [
+    480,
+    "/ngenaz/work/IMG-20260929-WA0092-480.webp"
+   ],
+   [
+    800,
+    "/ngenaz/work/IMG-20260929-WA0092-800.webp"
+   ],
+   [
+    1000,
+    "/ngenaz/work/IMG-20260929-WA0092.webp"
+   ]
+  ]
+ },
+ "/ngenaz/work/IMG-20260929-WA0093.webp": {
+  "w": 1040,
+  "h": 468,
+  "set": [
+   [
+    480,
+    "/ngenaz/work/IMG-20260929-WA0093-480.webp"
+   ],
+   [
+    800,
+    "/ngenaz/work/IMG-20260929-WA0093-800.webp"
+   ],
+   [
+    1040,
+    "/ngenaz/work/IMG-20260929-WA0093.webp"
+   ]
+  ]
+ },
+ "/ngenaz/work/IMG-20260929-WA0094.webp": {
+  "w": 1040,
+  "h": 468,
+  "set": [
+   [
+    480,
+    "/ngenaz/work/IMG-20260929-WA0094-480.webp"
+   ],
+   [
+    800,
+    "/ngenaz/work/IMG-20260929-WA0094-800.webp"
+   ],
+   [
+    1040,
+    "/ngenaz/work/IMG-20260929-WA0094.webp"
+   ]
+  ]
+ },
+ "/ngenaz/work/IMG-20260929-WA0095.webp": {
+  "w": 1280,
+  "h": 576,
+  "set": [
+   [
+    480,
+    "/ngenaz/work/IMG-20260929-WA0095-480.webp"
+   ],
+   [
+    800,
+    "/ngenaz/work/IMG-20260929-WA0095-800.webp"
+   ],
+   [
+    1280,
+    "/ngenaz/work/IMG-20260929-WA0095.webp"
+   ]
+  ]
+ },
+ "/ngenaz/work/IMG-20260929-WA0096.webp": {
+  "w": 1280,
+  "h": 576,
+  "set": [
+   [
+    480,
+    "/ngenaz/work/IMG-20260929-WA0096-480.webp"
+   ],
+   [
+    800,
+    "/ngenaz/work/IMG-20260929-WA0096-800.webp"
+   ],
+   [
+    1280,
+    "/ngenaz/work/IMG-20260929-WA0096.webp"
+   ]
+  ]
+ },
+ "/ngenaz/work/IMG-20260929-WA0097.webp": {
+  "w": 1280,
+  "h": 576,
+  "set": [
+   [
+    480,
+    "/ngenaz/work/IMG-20260929-WA0097-480.webp"
+   ],
+   [
+    800,
+    "/ngenaz/work/IMG-20260929-WA0097-800.webp"
+   ],
+   [
+    1280,
+    "/ngenaz/work/IMG-20260929-WA0097.webp"
+   ]
+  ]
+ },
+ "/ngenaz/work/IMG-20260929-WA0098.webp": {
+  "w": 1040,
+  "h": 468,
+  "set": [
+   [
+    480,
+    "/ngenaz/work/IMG-20260929-WA0098-480.webp"
+   ],
+   [
+    800,
+    "/ngenaz/work/IMG-20260929-WA0098-800.webp"
+   ],
+   [
+    1040,
+    "/ngenaz/work/IMG-20260929-WA0098.webp"
+   ]
+  ]
+ },
+ "/ngenaz/work/IMG-20260929-WA0100.webp": {
+  "w": 1280,
+  "h": 576,
+  "set": [
+   [
+    480,
+    "/ngenaz/work/IMG-20260929-WA0100-480.webp"
+   ],
+   [
+    800,
+    "/ngenaz/work/IMG-20260929-WA0100-800.webp"
+   ],
+   [
+    1280,
+    "/ngenaz/work/IMG-20260929-WA0100.webp"
+   ]
+  ]
+ },
+ "/ngenaz/work/IMG-20260929-WA0101.webp": {
+  "w": 1280,
+  "h": 576,
+  "set": [
+   [
+    480,
+    "/ngenaz/work/IMG-20260929-WA0101-480.webp"
+   ],
+   [
+    800,
+    "/ngenaz/work/IMG-20260929-WA0101-800.webp"
+   ],
+   [
+    1280,
+    "/ngenaz/work/IMG-20260929-WA0101.webp"
+   ]
+  ]
+ },
+ "/ngenaz/work/IMG-20260929-WA0102.webp": {
+  "w": 1280,
+  "h": 576,
+  "set": [
+   [
+    480,
+    "/ngenaz/work/IMG-20260929-WA0102-480.webp"
+   ],
+   [
+    800,
+    "/ngenaz/work/IMG-20260929-WA0102-800.webp"
+   ],
+   [
+    1280,
+    "/ngenaz/work/IMG-20260929-WA0102.webp"
+   ]
+  ]
+ },
+ "/ngenaz/work/IMG-20260929-WA0103.webp": {
+  "w": 1280,
+  "h": 576,
+  "set": [
+   [
+    480,
+    "/ngenaz/work/IMG-20260929-WA0103-480.webp"
+   ],
+   [
+    800,
+    "/ngenaz/work/IMG-20260929-WA0103-800.webp"
+   ],
+   [
+    1280,
+    "/ngenaz/work/IMG-20260929-WA0103.webp"
+   ]
+  ]
+ },
+ "/ngenaz/work/IMG-20260929-WA0104.webp": {
+  "w": 1280,
+  "h": 576,
+  "set": [
+   [
+    480,
+    "/ngenaz/work/IMG-20260929-WA0104-480.webp"
+   ],
+   [
+    800,
+    "/ngenaz/work/IMG-20260929-WA0104-800.webp"
+   ],
+   [
+    1280,
+    "/ngenaz/work/IMG-20260929-WA0104.webp"
+   ]
+  ]
+ },
+ "/ngenaz/work/IMG-20260929-WA0105.webp": {
+  "w": 1280,
+  "h": 576,
+  "set": [
+   [
+    480,
+    "/ngenaz/work/IMG-20260929-WA0105-480.webp"
+   ],
+   [
+    800,
+    "/ngenaz/work/IMG-20260929-WA0105-800.webp"
+   ],
+   [
+    1280,
+    "/ngenaz/work/IMG-20260929-WA0105.webp"
+   ]
+  ]
+ },
+ "/ngenaz/work/IMG-20260929-WA0106.webp": {
+  "w": 1280,
+  "h": 576,
+  "set": [
+   [
+    480,
+    "/ngenaz/work/IMG-20260929-WA0106-480.webp"
+   ],
+   [
+    800,
+    "/ngenaz/work/IMG-20260929-WA0106-800.webp"
+   ],
+   [
+    1280,
+    "/ngenaz/work/IMG-20260929-WA0106.webp"
+   ]
+  ]
+ },
+ "/ngenaz/work/IMG-20260929-WA0107.webp": {
+  "w": 1280,
+  "h": 960,
+  "set": [
+   [
+    480,
+    "/ngenaz/work/IMG-20260929-WA0107-480.webp"
+   ],
+   [
+    800,
+    "/ngenaz/work/IMG-20260929-WA0107-800.webp"
+   ],
+   [
+    1280,
+    "/ngenaz/work/IMG-20260929-WA0107.webp"
+   ]
+  ]
+ },
+ "/ngenaz/work/IMG-20260929-WA0108.webp": {
+  "w": 1040,
+  "h": 468,
+  "set": [
+   [
+    480,
+    "/ngenaz/work/IMG-20260929-WA0108-480.webp"
+   ],
+   [
+    800,
+    "/ngenaz/work/IMG-20260929-WA0108-800.webp"
+   ],
+   [
+    1040,
+    "/ngenaz/work/IMG-20260929-WA0108.webp"
+   ]
+  ]
+ },
+ "/ngenaz/work/IMG-20260929-WA0109.webp": {
+  "w": 1280,
+  "h": 576,
+  "set": [
+   [
+    480,
+    "/ngenaz/work/IMG-20260929-WA0109-480.webp"
+   ],
+   [
+    800,
+    "/ngenaz/work/IMG-20260929-WA0109-800.webp"
+   ],
+   [
+    1280,
+    "/ngenaz/work/IMG-20260929-WA0109.webp"
+   ]
+  ]
+ },
+ "/ngenaz/work/IMG-20260929-WA0110.webp": {
+  "w": 1280,
+  "h": 576,
+  "set": [
+   [
+    480,
+    "/ngenaz/work/IMG-20260929-WA0110-480.webp"
+   ],
+   [
+    800,
+    "/ngenaz/work/IMG-20260929-WA0110-800.webp"
+   ],
+   [
+    1280,
+    "/ngenaz/work/IMG-20260929-WA0110.webp"
+   ]
+  ]
+ },
+ "/ngenaz/work/IMG-20260929-WA0111.webp": {
+  "w": 1280,
+  "h": 576,
+  "set": [
+   [
+    480,
+    "/ngenaz/work/IMG-20260929-WA0111-480.webp"
+   ],
+   [
+    800,
+    "/ngenaz/work/IMG-20260929-WA0111-800.webp"
+   ],
+   [
+    1280,
+    "/ngenaz/work/IMG-20260929-WA0111.webp"
+   ]
+  ]
+ },
+ "/ngenaz/work/IMG-20260929-WA0112.webp": {
+  "w": 1280,
+  "h": 576,
+  "set": [
+   [
+    480,
+    "/ngenaz/work/IMG-20260929-WA0112-480.webp"
+   ],
+   [
+    800,
+    "/ngenaz/work/IMG-20260929-WA0112-800.webp"
+   ],
+   [
+    1280,
+    "/ngenaz/work/IMG-20260929-WA0112.webp"
+   ]
+  ]
+ },
+ "/ngenaz/work/IMG-20260929-WA0113.webp": {
+  "w": 1280,
+  "h": 576,
+  "set": [
+   [
+    480,
+    "/ngenaz/work/IMG-20260929-WA0113-480.webp"
+   ],
+   [
+    800,
+    "/ngenaz/work/IMG-20260929-WA0113-800.webp"
+   ],
+   [
+    1280,
+    "/ngenaz/work/IMG-20260929-WA0113.webp"
+   ]
+  ]
+ },
+ "/ngenaz/work/IMG-20260929-WA0114.webp": {
+  "w": 1040,
+  "h": 468,
+  "set": [
+   [
+    480,
+    "/ngenaz/work/IMG-20260929-WA0114-480.webp"
+   ],
+   [
+    800,
+    "/ngenaz/work/IMG-20260929-WA0114-800.webp"
+   ],
+   [
+    1040,
+    "/ngenaz/work/IMG-20260929-WA0114.webp"
+   ]
+  ]
+ },
+ "/ngenaz/work/IMG-20260929-WA0115.webp": {
+  "w": 1040,
+  "h": 468,
+  "set": [
+   [
+    480,
+    "/ngenaz/work/IMG-20260929-WA0115-480.webp"
+   ],
+   [
+    800,
+    "/ngenaz/work/IMG-20260929-WA0115-800.webp"
+   ],
+   [
+    1040,
+    "/ngenaz/work/IMG-20260929-WA0115.webp"
+   ]
+  ]
+ },
+ "/ngenaz/work/IMG-20260929-WA0116.webp": {
+  "w": 1040,
+  "h": 468,
+  "set": [
+   [
+    480,
+    "/ngenaz/work/IMG-20260929-WA0116-480.webp"
+   ],
+   [
+    800,
+    "/ngenaz/work/IMG-20260929-WA0116-800.webp"
+   ],
+   [
+    1040,
+    "/ngenaz/work/IMG-20260929-WA0116.webp"
+   ]
+  ]
+ },
+ "/ngenaz/work/IMG-20260929-WA0118.webp": {
+  "w": 1040,
+  "h": 468,
+  "set": [
+   [
+    480,
+    "/ngenaz/work/IMG-20260929-WA0118-480.webp"
+   ],
+   [
+    800,
+    "/ngenaz/work/IMG-20260929-WA0118-800.webp"
+   ],
+   [
+    1040,
+    "/ngenaz/work/IMG-20260929-WA0118.webp"
+   ]
+  ]
+ },
+ "/ngenaz/work/IMG-20260929-WA0119.webp": {
+  "w": 1040,
+  "h": 468,
+  "set": [
+   [
+    480,
+    "/ngenaz/work/IMG-20260929-WA0119-480.webp"
+   ],
+   [
+    800,
+    "/ngenaz/work/IMG-20260929-WA0119-800.webp"
+   ],
+   [
+    1040,
+    "/ngenaz/work/IMG-20260929-WA0119.webp"
+   ]
+  ]
+ },
+ "/ngenaz/work/IMG-20260929-WA0120.webp": {
+  "w": 1040,
+  "h": 468,
+  "set": [
+   [
+    480,
+    "/ngenaz/work/IMG-20260929-WA0120-480.webp"
+   ],
+   [
+    800,
+    "/ngenaz/work/IMG-20260929-WA0120-800.webp"
+   ],
+   [
+    1040,
+    "/ngenaz/work/IMG-20260929-WA0120.webp"
+   ]
+  ]
+ },
+ "/ngenaz/work/IMG-20260929-WA0122.webp": {
+  "w": 1040,
+  "h": 468,
+  "set": [
+   [
+    480,
+    "/ngenaz/work/IMG-20260929-WA0122-480.webp"
+   ],
+   [
+    800,
+    "/ngenaz/work/IMG-20260929-WA0122-800.webp"
+   ],
+   [
+    1040,
+    "/ngenaz/work/IMG-20260929-WA0122.webp"
+   ]
+  ]
+ },
+ "/ngenaz/work/IMG-20260929-WA0123.webp": {
+  "w": 1280,
+  "h": 576,
+  "set": [
+   [
+    480,
+    "/ngenaz/work/IMG-20260929-WA0123-480.webp"
+   ],
+   [
+    800,
+    "/ngenaz/work/IMG-20260929-WA0123-800.webp"
+   ],
+   [
+    1280,
+    "/ngenaz/work/IMG-20260929-WA0123.webp"
+   ]
+  ]
+ },
+ "/ngenaz/work/IMG-20260929-WA0124.webp": {
+  "w": 1280,
+  "h": 576,
+  "set": [
+   [
+    480,
+    "/ngenaz/work/IMG-20260929-WA0124-480.webp"
+   ],
+   [
+    800,
+    "/ngenaz/work/IMG-20260929-WA0124-800.webp"
+   ],
+   [
+    1280,
+    "/ngenaz/work/IMG-20260929-WA0124.webp"
+   ]
+  ]
+ },
+ "/ngenaz/work/IMG-20260929-WA0125.webp": {
+  "w": 1280,
+  "h": 576,
+  "set": [
+   [
+    480,
+    "/ngenaz/work/IMG-20260929-WA0125-480.webp"
+   ],
+   [
+    800,
+    "/ngenaz/work/IMG-20260929-WA0125-800.webp"
+   ],
+   [
+    1280,
+    "/ngenaz/work/IMG-20260929-WA0125.webp"
+   ]
+  ]
+ },
+ "/ngenaz/work/IMG-20260929-WA0126.webp": {
+  "w": 1280,
+  "h": 576,
+  "set": [
+   [
+    480,
+    "/ngenaz/work/IMG-20260929-WA0126-480.webp"
+   ],
+   [
+    800,
+    "/ngenaz/work/IMG-20260929-WA0126-800.webp"
+   ],
+   [
+    1280,
+    "/ngenaz/work/IMG-20260929-WA0126.webp"
+   ]
+  ]
+ },
+ "/ngenaz/work/IMG-20260929-WA0127.webp": {
+  "w": 1280,
+  "h": 576,
+  "set": [
+   [
+    480,
+    "/ngenaz/work/IMG-20260929-WA0127-480.webp"
+   ],
+   [
+    800,
+    "/ngenaz/work/IMG-20260929-WA0127-800.webp"
+   ],
+   [
+    1280,
+    "/ngenaz/work/IMG-20260929-WA0127.webp"
+   ]
+  ]
+ },
+ "/ngenaz/work/IMG-20260929-WA0128.webp": {
+  "w": 1280,
+  "h": 576,
+  "set": [
+   [
+    480,
+    "/ngenaz/work/IMG-20260929-WA0128-480.webp"
+   ],
+   [
+    800,
+    "/ngenaz/work/IMG-20260929-WA0128-800.webp"
+   ],
+   [
+    1280,
+    "/ngenaz/work/IMG-20260929-WA0128.webp"
+   ]
+  ]
+ },
+ "/ngenaz/work/IMG-20260929-WA0129.webp": {
+  "w": 1280,
+  "h": 576,
+  "set": [
+   [
+    480,
+    "/ngenaz/work/IMG-20260929-WA0129-480.webp"
+   ],
+   [
+    800,
+    "/ngenaz/work/IMG-20260929-WA0129-800.webp"
+   ],
+   [
+    1280,
+    "/ngenaz/work/IMG-20260929-WA0129.webp"
+   ]
+  ]
+ },
+ "/ngenaz/work/IMG-20260929-WA0130.webp": {
+  "w": 1280,
+  "h": 576,
+  "set": [
+   [
+    480,
+    "/ngenaz/work/IMG-20260929-WA0130-480.webp"
+   ],
+   [
+    800,
+    "/ngenaz/work/IMG-20260929-WA0130-800.webp"
+   ],
+   [
+    1280,
+    "/ngenaz/work/IMG-20260929-WA0130.webp"
+   ]
+  ]
+ },
+ "/ngenaz/work/IMG-20260929-WA0131.webp": {
+  "w": 1280,
+  "h": 576,
+  "set": [
+   [
+    480,
+    "/ngenaz/work/IMG-20260929-WA0131-480.webp"
+   ],
+   [
+    800,
+    "/ngenaz/work/IMG-20260929-WA0131-800.webp"
+   ],
+   [
+    1280,
+    "/ngenaz/work/IMG-20260929-WA0131.webp"
+   ]
+  ]
+ },
+ "/ngenaz/work/IMG-20260929-WA0132.webp": {
+  "w": 1280,
+  "h": 576,
+  "set": [
+   [
+    480,
+    "/ngenaz/work/IMG-20260929-WA0132-480.webp"
+   ],
+   [
+    800,
+    "/ngenaz/work/IMG-20260929-WA0132-800.webp"
+   ],
+   [
+    1280,
+    "/ngenaz/work/IMG-20260929-WA0132.webp"
+   ]
+  ]
+ },
+ "/ngenaz/work/IMG-20260929-WA0133.webp": {
+  "w": 1280,
+  "h": 576,
+  "set": [
+   [
+    480,
+    "/ngenaz/work/IMG-20260929-WA0133-480.webp"
+   ],
+   [
+    800,
+    "/ngenaz/work/IMG-20260929-WA0133-800.webp"
+   ],
+   [
+    1280,
+    "/ngenaz/work/IMG-20260929-WA0133.webp"
+   ]
+  ]
+ },
+ "/ngenaz/work/IMG-20260929-WA0134.webp": {
+  "w": 1280,
+  "h": 576,
+  "set": [
+   [
+    480,
+    "/ngenaz/work/IMG-20260929-WA0134-480.webp"
+   ],
+   [
+    800,
+    "/ngenaz/work/IMG-20260929-WA0134-800.webp"
+   ],
+   [
+    1280,
+    "/ngenaz/work/IMG-20260929-WA0134.webp"
+   ]
+  ]
+ },
+ "/ngenaz/work/IMG-20260929-WA0135.webp": {
+  "w": 1280,
+  "h": 576,
+  "set": [
+   [
+    480,
+    "/ngenaz/work/IMG-20260929-WA0135-480.webp"
+   ],
+   [
+    800,
+    "/ngenaz/work/IMG-20260929-WA0135-800.webp"
+   ],
+   [
+    1280,
+    "/ngenaz/work/IMG-20260929-WA0135.webp"
+   ]
+  ]
+ },
+ "/ngenaz/work/IMG-20260929-WA0136.webp": {
+  "w": 1280,
+  "h": 576,
+  "set": [
+   [
+    480,
+    "/ngenaz/work/IMG-20260929-WA0136-480.webp"
+   ],
+   [
+    800,
+    "/ngenaz/work/IMG-20260929-WA0136-800.webp"
+   ],
+   [
+    1280,
+    "/ngenaz/work/IMG-20260929-WA0136.webp"
+   ]
+  ]
+ },
+ "/ngenaz/work/IMG-20260929-WA0137.webp": {
+  "w": 1280,
+  "h": 576,
+  "set": [
+   [
+    480,
+    "/ngenaz/work/IMG-20260929-WA0137-480.webp"
+   ],
+   [
+    800,
+    "/ngenaz/work/IMG-20260929-WA0137-800.webp"
+   ],
+   [
+    1280,
+    "/ngenaz/work/IMG-20260929-WA0137.webp"
+   ]
+  ]
+ },
+ "/ngenaz/work/IMG-20260929-WA0138.webp": {
+  "w": 1280,
+  "h": 576,
+  "set": [
+   [
+    480,
+    "/ngenaz/work/IMG-20260929-WA0138-480.webp"
+   ],
+   [
+    800,
+    "/ngenaz/work/IMG-20260929-WA0138-800.webp"
+   ],
+   [
+    1280,
+    "/ngenaz/work/IMG-20260929-WA0138.webp"
+   ]
+  ]
+ },
+ "/ngenaz/work/IMG-20260929-WA0139.webp": {
+  "w": 1280,
+  "h": 576,
+  "set": [
+   [
+    480,
+    "/ngenaz/work/IMG-20260929-WA0139-480.webp"
+   ],
+   [
+    800,
+    "/ngenaz/work/IMG-20260929-WA0139-800.webp"
+   ],
+   [
+    1280,
+    "/ngenaz/work/IMG-20260929-WA0139.webp"
+   ]
+  ]
+ },
+ "/ngenaz/work/IMG-20260929-WA0140.webp": {
+  "w": 1280,
+  "h": 576,
+  "set": [
+   [
+    480,
+    "/ngenaz/work/IMG-20260929-WA0140-480.webp"
+   ],
+   [
+    800,
+    "/ngenaz/work/IMG-20260929-WA0140-800.webp"
+   ],
+   [
+    1280,
+    "/ngenaz/work/IMG-20260929-WA0140.webp"
+   ]
+  ]
+ },
+ "/ngenaz/work/IMG-20260929-WA0141.webp": {
+  "w": 1280,
+  "h": 576,
+  "set": [
+   [
+    480,
+    "/ngenaz/work/IMG-20260929-WA0141-480.webp"
+   ],
+   [
+    800,
+    "/ngenaz/work/IMG-20260929-WA0141-800.webp"
+   ],
+   [
+    1280,
+    "/ngenaz/work/IMG-20260929-WA0141.webp"
+   ]
+  ]
+ },
+ "/ngenaz/work/IMG-20260929-WA0143.webp": {
+  "w": 1280,
+  "h": 576,
+  "set": [
+   [
+    480,
+    "/ngenaz/work/IMG-20260929-WA0143-480.webp"
+   ],
+   [
+    800,
+    "/ngenaz/work/IMG-20260929-WA0143-800.webp"
+   ],
+   [
+    1280,
+    "/ngenaz/work/IMG-20260929-WA0143.webp"
+   ]
+  ]
+ },
+ "/ngenaz/work/IMG-20260929-WA0144.webp": {
+  "w": 1280,
+  "h": 576,
+  "set": [
+   [
+    480,
+    "/ngenaz/work/IMG-20260929-WA0144-480.webp"
+   ],
+   [
+    800,
+    "/ngenaz/work/IMG-20260929-WA0144-800.webp"
+   ],
+   [
+    1280,
+    "/ngenaz/work/IMG-20260929-WA0144.webp"
+   ]
+  ]
+ },
+ "/ngenaz/work/IMG-20260929-WA0145.webp": {
+  "w": 1280,
+  "h": 576,
+  "set": [
+   [
+    480,
+    "/ngenaz/work/IMG-20260929-WA0145-480.webp"
+   ],
+   [
+    800,
+    "/ngenaz/work/IMG-20260929-WA0145-800.webp"
+   ],
+   [
+    1280,
+    "/ngenaz/work/IMG-20260929-WA0145.webp"
+   ]
+  ]
+ },
+ "/ngenaz/work/IMG-20260929-WA0146.webp": {
+  "w": 576,
+  "h": 1280,
+  "set": [
+   [
+    480,
+    "/ngenaz/work/IMG-20260929-WA0146-480.webp"
+   ],
+   [
+    576,
+    "/ngenaz/work/IMG-20260929-WA0146.webp"
+   ]
+  ]
+ },
+ "/ngenaz/work/IMG-20260929-WA0147.webp": {
+  "w": 576,
+  "h": 1280,
+  "set": [
+   [
+    480,
+    "/ngenaz/work/IMG-20260929-WA0147-480.webp"
+   ],
+   [
+    576,
+    "/ngenaz/work/IMG-20260929-WA0147.webp"
+   ]
+  ]
+ },
+ "/ngenaz/work/IMG-20260929-WA0148.webp": {
+  "w": 1280,
+  "h": 576,
+  "set": [
+   [
+    480,
+    "/ngenaz/work/IMG-20260929-WA0148-480.webp"
+   ],
+   [
+    800,
+    "/ngenaz/work/IMG-20260929-WA0148-800.webp"
+   ],
+   [
+    1280,
+    "/ngenaz/work/IMG-20260929-WA0148.webp"
+   ]
+  ]
+ },
+ "/ngenaz/work/IMG-20260929-WA0149.webp": {
+  "w": 1280,
+  "h": 576,
+  "set": [
+   [
+    480,
+    "/ngenaz/work/IMG-20260929-WA0149-480.webp"
+   ],
+   [
+    800,
+    "/ngenaz/work/IMG-20260929-WA0149-800.webp"
+   ],
+   [
+    1280,
+    "/ngenaz/work/IMG-20260929-WA0149.webp"
+   ]
+  ]
+ },
+ "/ngenaz/work/IMG-20260929-WA0150.webp": {
+  "w": 1280,
+  "h": 576,
+  "set": [
+   [
+    480,
+    "/ngenaz/work/IMG-20260929-WA0150-480.webp"
+   ],
+   [
+    800,
+    "/ngenaz/work/IMG-20260929-WA0150-800.webp"
+   ],
+   [
+    1280,
+    "/ngenaz/work/IMG-20260929-WA0150.webp"
+   ]
+  ]
+ },
+ "/ngenaz/work/IMG-20260929-WA0151.webp": {
+  "w": 1280,
+  "h": 576,
+  "set": [
+   [
+    480,
+    "/ngenaz/work/IMG-20260929-WA0151-480.webp"
+   ],
+   [
+    800,
+    "/ngenaz/work/IMG-20260929-WA0151-800.webp"
+   ],
+   [
+    1280,
+    "/ngenaz/work/IMG-20260929-WA0151.webp"
+   ]
+  ]
+ },
+ "/ngenaz/work/IMG-20260929-WA0152.webp": {
+  "w": 1280,
+  "h": 576,
+  "set": [
+   [
+    480,
+    "/ngenaz/work/IMG-20260929-WA0152-480.webp"
+   ],
+   [
+    800,
+    "/ngenaz/work/IMG-20260929-WA0152-800.webp"
+   ],
+   [
+    1280,
+    "/ngenaz/work/IMG-20260929-WA0152.webp"
+   ]
+  ]
+ }
+}

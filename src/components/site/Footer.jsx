@@ -8,7 +8,7 @@ export default function Footer() {
   return (
     <footer className="relative overflow-hidden">
       <div className="absolute inset-0">
-        <img src="/ngenaz/hero-side.png" alt="" className="w-full h-full object-cover grayscale opacity-30" />
+        <img src="/ngenaz/hero-side-640.webp" srcSet="/ngenaz/hero-side-640.webp 640w, /ngenaz/hero-side-1024.webp 1024w, /ngenaz/hero-side.webp 1600w" sizes="100vw" alt="" loading="lazy" decoding="async" className="w-full h-full object-cover grayscale opacity-30" />
         <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(5,7,8,.94),rgba(5,7,8,.78))]" />
       </div>
       <div className="relative mx-auto max-w-[1600px] px-6 md:px-[7vw] py-14 md:py-20 text-white">

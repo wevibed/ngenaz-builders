@@ -7,7 +7,7 @@ export default function Introduction() {
     <section id="project-intro" className="relative overflow-hidden">
       <div className="absolute inset-0">
         <Image
-          src="/ngenaz/hero-side.png"
+          src="/ngenaz/hero-side.webp"
           alt="Ngenaz Builders residential project, side elevation"
           className="w-full h-full"
           fittingType="fill"
